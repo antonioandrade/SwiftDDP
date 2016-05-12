@@ -65,7 +65,11 @@ class Lists: MeteorCoreDataTableViewController, MeteorCoreDataCollectionDelegate
         let list = (UIApplication.sharedApplication().delegate as! AppDelegate).lists
 
         if let newList = newListField.text {
-            list.insert(["_id":Meteor.client.getId(), "name":newList])
+            list.insert([
+                //"_id":Meteor.client.getId(),
+                "name":newList,
+                "incompleteCount":0
+                ])
             newListField.text = ""
         }
     }

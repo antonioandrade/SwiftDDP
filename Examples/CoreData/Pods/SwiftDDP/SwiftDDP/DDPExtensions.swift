@@ -114,7 +114,7 @@ extension DDPClient {
     */
     
     public func insert(collection: String, document: NSArray, callback: DDPMethodCallback?) -> String {
-        let arg = "/\(collection)/insert"
+        let arg = collection.lowercaseString+".insert"
         return self.method(arg, params: document, callback: callback)
     }
     
